@@ -6,5 +6,6 @@ $.ajax({
  },
  success: function(data) {
    console.log(data);
+   console.log('hello from the other side...')
  }
 });

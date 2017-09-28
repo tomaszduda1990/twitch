@@ -98,7 +98,7 @@ body {
           margin: 0.8rem 0 0.8rem 0;
           padding: 2rem 1rem;
           display: flex;
-          justify-content: center;
+          justify-content: space-around;
           transition: 0.4s;
           -webkit-box-shadow: 0px 0px 49px 4px rgba(0, 0, 0, 0.75);
           -moz-box-shadow: 0px 0px 49px 4px rgba(0, 0, 0, 0.75);
@@ -156,21 +156,15 @@ body {
           body article .list-wrapper ul li:before {
             top: 0;
             left: -5%; }
-          body article .list-wrapper ul li:nth-child(odd) {
-            background: lightgreen; }
-            body article .list-wrapper ul li:nth-child(odd):before, body article .list-wrapper ul li:nth-child(odd):after {
-              background: lightgreen;
-              -webkit-transform: skew(5deg);
-              -moz-transform: skew(5deg);
-              -o-transform: skew(5deg);
-              transition: 0.4s; }
-          body article .list-wrapper ul li:nth-child(even) {
-            background: tomato; }
-            body article .list-wrapper ul li:nth-child(even):before, body article .list-wrapper ul li:nth-child(even):after {
-              background: tomato;
-              -webkit-transform: skew(-5deg);
-              -moz-transform: skew(-5deg);
-              -o-transform: skew(-5deg); }
+          body article .list-wrapper ul li:nth-child(odd):before, body article .list-wrapper ul li:nth-child(odd):after {
+            -webkit-transform: skew(5deg);
+            -moz-transform: skew(5deg);
+            -o-transform: skew(5deg);
+            transition: 0.4s; }
+          body article .list-wrapper ul li:nth-child(even):before, body article .list-wrapper ul li:nth-child(even):after {
+            -webkit-transform: skew(-5deg);
+            -moz-transform: skew(-5deg);
+            -o-transform: skew(-5deg); }
           body article .list-wrapper ul li:hover {
             background: AliceBlue; }
             body article .list-wrapper ul li:hover:after, body article .list-wrapper ul li:hover:before {
@@ -178,5 +172,13 @@ body {
               -moz-transform: skew(0deg);
               -o-transform: skew(0deg);
               background: AliceBlue; }
+        body article .list-wrapper ul .online {
+          background: lightgreen; }
+          body article .list-wrapper ul .online:before, body article .list-wrapper ul .online:after {
+            background: lightgreen; }
+        body article .list-wrapper ul .offline {
+          background: tomato; }
+          body article .list-wrapper ul .offline:before, body article .list-wrapper ul .offline:after {
+            background: tomato; }
 
 /*# sourceMappingURL=style.css.map */

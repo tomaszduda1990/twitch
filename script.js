@@ -17,31 +17,26 @@ function apiCall(arr, type){
 	 		url: url+type+name,
 	 		headers: clientID,
 	 		success: function(data) {
-	 			console.log(data);
 			   status = isOnline(data)[0];
 			   game = isOnline(data)[1];
-			   console.log(status, game);
+			   console.log(status);
+			   if(status == "online"){
+			   		list.innerHTML += populateList(data.stream.channel, game, status);
+			   }else{
+			   	$.ajax({
+					type: 'GET',
+					url: url+'channels/'+name,
+					headers: clientID,
+					success: function(data){
+							list.innerHTML += populateList(data, game, status);
+					}
+				})
+			   }
 			 },
 		 	error: function(){
 		 		console.log('error!')
 		 	}
 		});
-		// type = 'channels/';
-		// $.ajax({
-	 // 		type: 'GET',
-	 // 		url: url+type+name,
-	 // 		headers: clientID,
-	 // 		success: function(data) {
-	 // 		// console.log(data);
-	 // 		   console.log(status);
-		// 	   list.innerHTML += populateList(data, game, status);
-		// 	   status = "";
-		// 	   game = "";
-		// 	 },
-		//  	error: function(){
-		//  		console.log('error!')
-		//  	}
-		// });
 	})
 }
 function isOnline(data){
@@ -56,6 +51,7 @@ function isOnline(data){
       return [status, game];
 }
 function populateList(data, game, status){
+		console.log(status);
 	if(status == "online"){
 		return `<li class= "online">
 					<img class="portrait" src = "${data.logo ? data.logo : imgUrl}" alt = "logo of ${data.display_name || data.name}">

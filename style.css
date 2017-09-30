@@ -9,11 +9,33 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background: darkseagreen; }
+  background: indigo; }
+  body:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: url("imgs/Twitch_White_RGB.png") no-repeat;
+    background-position: center bottom;
+    background-attachment: fixed;
+    opacity: 0.4;
+    z-index: -1;
+    transform: rotate(25deg); }
   body header h1 {
+    color: AliceBlue;
+    position: relative;
     text-align: center;
     font-family: 'Federica the Great', cursive;
     font-size: 4rem; }
+    body header h1 span {
+      margin-right: 1.2rem;
+      color: AliceBlue;
+      -webkit-animation: ghost 3s alternate infinite;
+      -moz-animation: ghost 3s alternate infinite;
+      -o-animation: ghost 3s alternate infinite;
+      animation: ghost 3s alternate infinite; }
   body nav {
     padding: 0 5%; }
     body nav ul {
@@ -23,6 +45,15 @@ body {
       display: flex;
       justify-content: center;
       align-items: center; }
+      body nav ul #active {
+        background: indigo;
+        -webkit-box-shadow: 0px 0px 43px 0px #e9f011;
+        -moz-box-shadow: 0px 0px 43px 0px #e9f011;
+        box-shadow: 0px 0px 43px 0px #e9f011; }
+        body nav ul #active button {
+          color: white; }
+          body nav ul #active button span {
+            margin-left: 1rem; }
       body nav ul li:nth-child(1) {
         background: DarkTurquoise; }
       body nav ul li:nth-child(2) {
@@ -89,50 +120,42 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        align-items: left; }
+        align-items: center; }
+        body article .list-wrapper ul .sortedOut {
+          display: none !important; }
         body article .list-wrapper ul li {
           overflow: none;
           color: black;
           position: relative;
-          width: 70%;
+          width: 60%;
           margin: 0.8rem 0 0.8rem 0;
           padding: 2rem 1rem;
           display: flex;
-          justify-content: space-around;
+          justify-content: flex-start;
           transition: 0.4s;
           -webkit-box-shadow: 0px 0px 49px 4px rgba(0, 0, 0, 0.75);
           -moz-box-shadow: 0px 0px 49px 4px rgba(0, 0, 0, 0.75);
           box-shadow: 0px 0px 49px 4px rgba(0, 0, 0, 0.75); }
-          body article .list-wrapper ul li .activness {
-            position: absolute;
-            right: -25%;
-            top: 50%;
-            transform: translateY(-50%);
-            text-align: center; }
-            body article .list-wrapper ul li .activness img {
-              height: 2.5rem;
-              width: 5rem; }
-            body article .list-wrapper ul li .activness p {
-              text-transform: uppercase;
-              font-family: "Josefin Slab", serif;
-              font-size: 1.8rem;
-              font-weight: 700; }
-          body article .list-wrapper ul li .portrait {
-            z-index: 1;
-            border: 0.2rem beige solid;
-            width: 8rem;
-            height: 8rem;
-            border-radius: 50%;
-            box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5); }
           body article .list-wrapper ul li a {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            height: 100%;
             text-decoration: none;
-            color: black; }
+            color: black;
+            z-index: 3; }
+            body article .list-wrapper ul li a .portrait {
+              margin-right: 5rem;
+              border: 0.2rem beige solid;
+              width: 8.5rem;
+              height: 8.5rem;
+              border-radius: 50%;
+              box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5); }
             body article .list-wrapper ul li a .item {
-              z-index: 1;
               background: none;
-              display: inline-block;
               padding: 0 0 0 .8rem;
-              text-align: center; }
+              text-align: center;
+              height: 100%; }
               body article .list-wrapper ul li a .item h5 {
                 font-family: 'Federica the Great', cursive;
                 margin-top: 0.5rem;
@@ -143,6 +166,25 @@ body {
                 font-size: 1.6rem;
                 font-family: 'Josefin Slab', serif;
                 font-weight: 600; }
+          body article .list-wrapper ul li .activness {
+            position: absolute;
+            right: 0;
+            top: 25%;
+            background: none;
+            border-radius: .5rem;
+            z-index: 10;
+            width: 6rem;
+            height: 3rem;
+            transform: translateY(-50%);
+            text-align: center; }
+            body article .list-wrapper ul li .activness img {
+              height: 100%;
+              width: 100%; }
+            body article .list-wrapper ul li .activness p {
+              text-transform: uppercase;
+              font-family: "Josefin Slab", serif;
+              font-size: 1.4rem;
+              font-weight: 700; }
           body article .list-wrapper ul li:before, body article .list-wrapper ul li:after {
             content: "";
             z-index: 0;
@@ -180,5 +222,26 @@ body {
           background: tomato; }
           body article .list-wrapper ul .offline:before, body article .list-wrapper ul .offline:after {
             background: tomato; }
+
+@-webkit-keyframes ghost {
+  from {
+    color: aqua; }
+  to {
+    color: AliceBlue; } }
+@-moz-keyframes ghost {
+  from {
+    color: aqua; }
+  to {
+    color: AliceBlue; } }
+@-o-keyframes ghost {
+  from {
+    color: aqua; }
+  to {
+    color: AliceBlue; } }
+@keyframes ghost {
+  from {
+    color: aqua; }
+  to {
+    color: AliceBlue; } }
 
 /*# sourceMappingURL=style.css.map */

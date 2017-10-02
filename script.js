@@ -9,7 +9,6 @@ const buttons = document.querySelectorAll('.btn');
 const onlineBtn = document.querySelector('.online');
 const allBtn = document.querySelector('.all');
 const offlineBtn = document.querySelector('.offline');
-console.log(buttons);
 let filtered = [];
 
 
@@ -23,7 +22,6 @@ function apiCall(arr, type){
 	 		url: url+type+name,
 	 		headers: clientID,
 	 		success: function(data) {
-	 			console.log(data);
 			   status = isOnline(data)[0];
 			   game = isOnline(data)[1];
 			   if(status == "online"){

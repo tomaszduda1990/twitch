@@ -11,6 +11,7 @@ body{
 	margin: 0;
 	padding: 0;
 	background: indigo;
+	overflow-x: hidden;
 	&:after{
 		position: absolute;
 		content: "";
@@ -19,7 +20,7 @@ body{
 		left: 0;
 		bottom: 0;
 		background: url('imgs/Twitch_White_RGB.png') no-repeat;
-		background-position: center bottom;
+		background-position: center;
 		background-attachment: fixed;
 		opacity: 0.4;
 		z-index: -1;
@@ -78,7 +79,6 @@ body{
 				position: relative;
 				overflow: hidden;
 				z-index: 1;
-				font-size: 2rem;
 				flex: 1;
 				margin: 0.3rem;
 				text-align: center;
@@ -130,19 +130,20 @@ body{
 		}
 	}
 	article{
-		padding: 3rem;
+		padding: 3rem 0;
 		.list-wrapper{
-			width: 60%;
 			margin: 0 auto;
+			padding: 2rem;
+			width: 60%;
 			background: rgba(250,250,250,0.1);
 			border-radius: 0.7rem;
-			padding: 2rem;
 			ul{
 				list-style-type: none;
 				display: flex;
 				flex-direction: column;
 				justify-content: space-around;
 				align-items: center;
+				padding: 0;
 					.sortedOut{
 						display: none !important;
 					}
@@ -280,6 +281,129 @@ body{
 	}
 	
 }
+@media screen and (max-width: 1200px) and (min-width: 885px){
+	body{
+		&:after{
+			transform: scale(0.6);
+		}
+		article{
+			.list-wrapper{
+				.list{
+					li{
+						width: 80%;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and(max-width: 884px) and (min-width: 610px){
+	body{
+		&:after{
+			display: none;
+		}
+		article{
+			.list-wrapper{
+				width: 80%;
+				.list{
+					li{
+						width: 80%;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 609px) and (min-width: 440px){
+	body{
+		&:after{
+			display: none;
+		}
+		article{
+			.list-wrapper{
+				width: 95%;
+				.list{
+					li{
+						width: 90%;
+						a{
+							.portrait{
+								width: 6rem;
+								height: 6rem;
+							}
+							.item{
+								h5{
+									font-size: 1.6rem;
+								}
+								p{
+									font-size: 1.4rem;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 439px){
+	body{
+		&:after{
+			display: none;
+		}
+		header{
+			h1{
+				font-size: 3rem;
+				margin-bottom: 4rem;
+
+			}
+		}
+		nav{
+			padding: 0 2.5%;
+			ul{
+				li{
+					button{
+						padding: 0.8rem;
+						font-size: 1.6rem;
+					}
+				}
+			}
+		}
+		article{
+			.list-wrapper{
+				width: 100%;
+				.list{
+					li{
+						width: 95%;
+						a{
+							.portrait{
+								width: 6rem;
+								height: 6rem;
+								margin-right: 1.7rem; 
+							}
+							.item{
+								text-align: left;
+								h5{
+									font-size: 1.6rem;
+								}
+								p{
+									font-size: 1.4rem;
+								}
+							}
+						}
+						.activness{
+							width: 4rem;
+							height: 2rem;
+							p{
+								font-size: 1rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 @-webkit-keyframes ghost {
     from {color: aqua;}
     to   {color: AliceBlue;}
